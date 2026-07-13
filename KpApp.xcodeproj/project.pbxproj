@@ -133,6 +133,7 @@
 		21302568DA985A839D844AD5 /* ResizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2650097CD51C5F0D454B40C /* ResizerTests.swift */; };
 		23D6A7329FD70DC6F4AC87C0 /* ZimContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6F826324835FD0E6AB5EA2 /* ZimContentProvider.swift */; };
 		2486854A800D825FBCDA14E3 /* KpappHotspot.mm in Sources */ = {isa = PBXBuildFile; fileRef = 97B8C639C1832E4F08CB2992 /* KpappHotspot.mm */; };
+		24FEB38A3005549B00461699 /* SkipCertificateURLSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FEB3893005549B00461699 /* SkipCertificateURLSessionDelegate.swift */; };
 		2580A5A6780258C880BBCB81 /* WelcomeCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087CAFD5246FEA7FCF3C8F28 /* WelcomeCatalog.swift */; };
 		2739E61A70EEA131516506E1 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4715FE83837E4D06B24AA1 /* Formatter.swift */; };
 		294F278A8BE70325B33596BE /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928B7094AE4F16732F8C1811 /* SplitViewController.swift */; };
@@ -456,6 +457,7 @@
 		235B1549E0E0C7DCF17689E5 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		239057B9785D1952956C6A84 /* StringLocalExtension.swift_temp */ = {isa = PBXFileReference; lastKnownFileType = text; path = StringLocalExtension.swift_temp; sourceTree = "<group>"; };
 		248F5BCD9F73629848972671 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		24FEB3893005549B00461699 /* SkipCertificateURLSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipCertificateURLSessionDelegate.swift; sourceTree = "<group>"; };
 		2908B4FD41A1FD5623DD3AF7 /* Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
 		2AE1D2E594CE56785CED4125 /* App_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App_iOS.swift; sourceTree = "<group>"; };
 		2BCEFA637D982ABA71EC0A59 /* ZimFileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZimFileService.swift; sourceTree = "<group>"; };
@@ -620,7 +622,7 @@
 		EEF7EDEB126B5F3219B4E67C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EF6B2704F8B3A0DF326C10ED /* PaymentResultPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentResultPopUp.swift; sourceTree = "<group>"; };
 		F0527D83B923A46ADE1B3F3F /* AsyncButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncButtonView.swift; sourceTree = "<group>"; };
-		F24A5D4A5E9AE678D37E9E2D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = file; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		F24A5D4A5E9AE678D37E9E2D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		F6A5D9D15AC8B6EE67845C73 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F88A03CCBB7B38816FDFE221 /* LocalString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalString.swift; sourceTree = "<group>"; };
 		F9E63F73FC2C53A052F31DBF /* zh-hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-hans"; path = "zh-hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -1190,6 +1192,7 @@
 		A54036F3602C72A6B7E45C3D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				24FEB3893005549B00461699 /* SkipCertificateURLSessionDelegate.swift */,
 				D439A6837B9A8089BC339707 /* Bundle+Extension.swift */,
 				6F4903D0DB111A18BB99F424 /* ByteRanges.swift */,
 				A13DA3E8E836F9620A948E4E /* CopyPaste.swift */,
@@ -1572,6 +1575,7 @@
 				0904D87FB108AB9058328649 /* App_iOS.swift in Sources */,
 				C1DBBA2A67FCDC105948EDA1 /* ArticleActions.swift in Sources */,
 				C349289BCC4E9DE331A8B255 /* ArticleCell.swift in Sources */,
+				24FEB38A3005549B00461699 /* SkipCertificateURLSessionDelegate.swift in Sources */,
 				BDC6ADA8FEA0C76401D06A33 /* ArticleShortcutButtons.swift in Sources */,
 				5BA001F9194F05DE926E8452 /* AsyncButton.swift in Sources */,
 				4437BC1C43318BBC284C55B6 /* AsyncButtonView.swift in Sources */,

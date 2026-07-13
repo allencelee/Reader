@@ -61,9 +61,15 @@ final class Database {
         return container
     }
 
+    private static let skipCertDelegate = SkipCertificateURLSessionDelegate()
+    private static let insecureURLSession: URLSession = {
+        let config = URLSessionConfiguration.default
+        return URLSession(configuration: config, delegate: skipCertDelegate, delegateQueue: nil)
+    }()
+
     /// Save image data to zim files.
     func saveImageData(url: URL, completion: @escaping (Data) -> Void) {
-        URLSession.shared.dataTask(with: url) { [self] data, response, _ in
+        Self.insecureURLSession.dataTask(with: url) { [self] data, response, _ in
             guard let response = response as? HTTPURLResponse,
                   response.statusCode == 200,
                   let mimeType = response.mimeType,

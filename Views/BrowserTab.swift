@@ -74,7 +74,7 @@ struct BrowserTab: View {
         .modifier(ExternalLinkHandler(externalURL: $browser.externalURL))
         .searchable(
             text: $search.searchText,
-            placement: .toolbarPrincipal,
+            placement: .navigationBarDrawer(displayMode: .always),
             prompt: LocalString.common_search
         )
         .onChange(of: scenePhase) { [weak browser] newValue in

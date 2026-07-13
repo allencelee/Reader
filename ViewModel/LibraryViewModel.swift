@@ -105,12 +105,19 @@ final class LibraryViewModel: ObservableObject {
     private let urlSession: URLSession
     private var insertionCount = 0
     private var deletionCount = 0
-    
-    private static let catalogURL = URL(string: "https://opds.library.kpapp.com/v2/entries?count=-1")!
+    private static let skipCertDelegate = SkipCertificateURLSessionDelegate()
+
+//    private static let catalogURL = URL(string: "https://opds.library.kpapp.com/v2/entries?count=-1")!
+    private static let catalogURL = URL(string: "https://kpapp.com/v2/entries?count=-1")!
+
+    private static let insecureURLSession: URLSession = {
+        let config = URLSessionConfiguration.default
+        return URLSession(configuration: config, delegate: skipCertDelegate, delegateQueue: nil)
+    }()
 
     @MainActor
     init(
-        urlSession: URLSession = URLSession.shared,
+        urlSession: URLSession = insecureURLSession,
         processFactory: @MainActor () -> LibraryProcess = { .shared },
         defaults: Defaulting = UDefaults(),
         categories: CategoriesProtocol = CategoriesToLanguages(withDefaults: UDefaults()),

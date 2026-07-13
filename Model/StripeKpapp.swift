@@ -9,6 +9,12 @@ struct StripeKpapp {
     /// The very maximum amount stripe payment intent can handle
     static let maxAmount: Int = 999999999
 
+    private static let skipCertDelegate = SkipCertificateURLSessionDelegate()
+    private static let insecureURLSession: URLSession = {
+        let config = URLSessionConfiguration.default
+        return URLSession(configuration: config, delegate: skipCertDelegate, delegateQueue: nil)
+    }()
+
     enum StripeError: Error {
         case serverError
     }
@@ -17,7 +23,7 @@ struct StripeKpapp {
     let payment: PKPayment
 
     func publishableKey() async throws -> String {
-        let (data, response) = try await URLSession.shared.data(from: endPoint.appending(path: "config"))
+        let (data, response) = try await Self.insecureURLSession.data(from: endPoint.appending(path: "config"))
         guard let httpResponse = response as? HTTPURLResponse,
               (200..<300).contains(httpResponse.statusCode) else {
             throw StripeError.serverError
@@ -35,7 +41,7 @@ struct StripeKpapp {
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpBody = try JSONEncoder().encode(SelectedPaymentAmount(from: selectedAmount))
-            let (data, response) = try await URLSession.shared.data(for: request)
+            let (data, response) = try await Self.insecureURLSession.data(for: request)
             guard let httpResponse = response as? HTTPURLResponse,
                   (200..<300).contains(httpResponse.statusCode) else {
                 throw StripeError.serverError
@@ -55,7 +61,7 @@ struct StripeKpapp {
             let encoder = JSONEncoder()
             encoder.keyEncodingStrategy = .convertToSnakeCase
             request.httpBody = try encoder.encode(SessionParams())
-            let (data, response) = try await URLSession.shared.data(for: request)
+            let (data, response) = try await Self.insecureURLSession.data(for: request)
             guard let httpResponse = response as? HTTPURLResponse,
                   (200..<300).contains(httpResponse.statusCode) else {
                 throw StripeError.serverError
