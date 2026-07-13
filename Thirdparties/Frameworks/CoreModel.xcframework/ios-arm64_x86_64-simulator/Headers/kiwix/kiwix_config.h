@@ -1,0 +1,3 @@
+
+#define LIBKIWIX_VERSION "14.1.0"
+

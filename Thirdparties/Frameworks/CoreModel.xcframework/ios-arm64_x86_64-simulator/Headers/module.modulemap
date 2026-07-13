@@ -1,0 +1,5 @@
+module CoreModel {
+    header "kiwix/version.h"
+
+    export *
+}
